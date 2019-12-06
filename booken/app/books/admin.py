@@ -1,11 +1,7 @@
 from django.contrib import admin
 
-from books.models import Book, Author, Publisher
+from .models import Book, Author, Publisher
 
-
-@admin.register(Book)
-class BookAdmin(admin.ModelAdmin):
-    pass
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
@@ -13,4 +9,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Publisher)
 class PublisherAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
     pass
