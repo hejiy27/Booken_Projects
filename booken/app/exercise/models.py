@@ -12,8 +12,8 @@ class Category(models.Model):
 class Exercise (models.Model):
     name = models.CharField(verbose_name='운동이름', max_length=255)
     english_name = models.CharField(verbose_name='영어이름', max_length=255)
-    time = models.IntegerField(verbose_name='시간', blank=True)
-    calorie = models.IntegerField(verbose_name='칼로리', blank=True)
+    time = models.IntegerField(verbose_name='시간', null=True)
+    calorie = models.IntegerField(verbose_name='칼로리', null=True)
     power = models.CharField(verbose_name='운동강도',max_length=255, blank=True)
     descriptions = models.TextField(verbose_name='운동설명',null=True)
     category = models.ForeignKey(Category,on_delete= models.CASCADE)
