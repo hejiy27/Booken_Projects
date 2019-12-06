@@ -17,7 +17,7 @@ class Exercise (models.Model):
     power = models.CharField(verbose_name='운동강도',max_length=255, blank=True)
     descriptions = models.TextField(verbose_name='운동설명',null=True)
     category = models.ForeignKey(Category,on_delete= models.CASCADE)
-    # images = models.ImageField(verbose_name= '운동 이미지',blank=True, upload_to= '')
+    images = models.ImageField(verbose_name= '운동 이미지',blank=True, upload_to= 'exercise/action')
 
     def __str__(self):
         return self.name
