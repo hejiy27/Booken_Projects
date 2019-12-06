@@ -29,3 +29,6 @@ class Book(models.Model):
     # author이 삭제될때 Author도 같이 삭제한다. CASCADE
     author = models.ForeignKey(Author,on_delete= models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
