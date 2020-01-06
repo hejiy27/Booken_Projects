@@ -18,9 +18,18 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from books.views import BookListAPIView
+from exercise.views import ExerciseListAPIView
+from trainer.views import TrainerListAPIView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('books/', BookListAPIView.as_view()),
+    path('trainer/', TrainerListAPIView.as_view()),
+    path('exercise/', ExerciseListAPIView.as_view()),
 ]
+
+
 # /media/로 오는 요청은 MEDIA_ROOT의 파일들에서 찾아서 리턴
 urlpatterns += static(
     prefix= settings.MEDIA_URL,

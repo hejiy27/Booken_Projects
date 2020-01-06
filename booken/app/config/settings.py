@@ -41,15 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework'
+    'rest_framework',
 
     'members',
     'books',
     'exercise',
     'trainer',
 
-    'query',
-    'django_extensions'
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

@@ -2,17 +2,19 @@ from rest_framework import serializers
 
 from books.models import Author,Publisher,Book
 
-class SnippetSerializerAuthor(serializers.ModelSerializer):
+class SerializerAuthor(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = ['name']
 
-class SnippetSerializerPublisher(serializers.ModelSerializer):
+class SerializerPublisher(serializers.ModelSerializer):
     class Meta:
         model = Publisher
         fields = ['name']
 
-class SnippetSerializerBook(serializers.ModelSerializer):
+class SerializerBook(serializers.ModelSerializer):
+    author = SerializerAuthor()
+    publisher = SerializerPublisher()
     class Meta:
         model = Book
         fields =[

@@ -21,8 +21,8 @@ class ExerciseDescriptions(models.Model):
     ex_description = models.TextField(verbose_name='운동설명')
 
 # # 운동설명이
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.number
 
     class Meta:
         db_table: 'booken_description'
