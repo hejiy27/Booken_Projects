@@ -1,20 +1,22 @@
 from rest_framework import serializers
-from exercise.models import Category,ExerciseDescriptions,ExerciseImage,Exercise
+from exercise.models import ExerciseCategory,ExerciseDescriptions,ExerciseImage,Exercise
 
-class SerializerCategory(serializers.ModelSerializer):
+
+
+class SerializerExerciseCategory(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = ['name', 'description']
+        model = ExerciseCategory
+        fields = ["name", "description"]
 
 class SerializerExerciseDescrions(serializers.ModelSerializer):
     class Meta:
         model = ExerciseDescriptions
-        fields = ['number','ex_description']
+        fields = ['ex_description']
 
 class SerializerExerciseImage(serializers.ModelSerializer):
     class Meta:
         model = ExerciseImage
-        fields = ['image_numder', 'exe_image', 'exe_trainer']
+        fields = ["url"]
 
 class SerializerExercise(serializers.ModelSerializer):
     class Meta:

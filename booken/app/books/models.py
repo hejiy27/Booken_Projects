@@ -25,12 +25,9 @@ class Book(models.Model):
     page = models.IntegerField(verbose_name= '페이지',null=True)
     sale_price = models.IntegerField(verbose_name='판매가격', null=True)
     used_price = models.IntegerField(verbose_name= '중고가격', null=True)
-
     # DecimalField 는 숫자로 받으며, 정수와 소수점 포함 자리수는 5, 소수점 자리 수 2 로 지정
     grade = models.DecimalField(verbose_name='평점', max_digits= 5,decimal_places= 2)
-
-
-    # author이 삭제될때 Author도 같이 삭제한다. CASCADE
+     # author이 삭제될때 Author도 같이 삭제한다. CASCADE
     author = models.ForeignKey(Author,on_delete= models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
 

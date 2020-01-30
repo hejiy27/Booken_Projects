@@ -1,19 +1,15 @@
 from django.contrib import admin
 
-from .models import Exercise, Category, ExerciseDescriptions, ExerciseImage
+from .models import Exercise, ExerciseCategory,  ExerciseImage
 
-@admin.register(Category)
-class ExersisesAdmin(admin.ModelAdmin):
+@admin.register(ExerciseCategory)
+class ExerciseCategoryAdmin(admin.ModelAdmin):
     pass
+
+class ExerciseImageAdmin(admin.StackedInline):
+    model = ExerciseImage
 
 @admin.register(Exercise)
 class ExerciseAdmin(admin.ModelAdmin):
-    pass
+    inlines = [ExerciseImageAdmin]
 
-@admin.register(ExerciseDescriptions)
-class ExerciseDescriptionsAdmin(admin.ModelAdmin):
-    pass
-
-@admin.register(ExerciseImage)
-class ExerciseImageAdmin(admin.ModelAdmin):
-    pass
